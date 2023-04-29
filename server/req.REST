@@ -1,0 +1,12 @@
+POST http://localhost:4000/upload
+Content-Type: multipart/form-data
+
+{
+    "title": "image here",
+    "description": "this is a image desc",
+    "filename": "this is a image desc",
+    "originalFilename": "this is a image desc",
+    "path": "this is a image desc",
+    "mimetype": "this is a image desc",
+    "size": 23,
+}

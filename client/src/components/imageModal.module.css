@@ -1,0 +1,22 @@
+/* stylelint-disable declaration-no-important */
+
+.modal-overlay {
+  @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center;
+}
+
+.modal-content {
+  @apply bg-white p-8 flex flex-col items-center;
+}
+
+.modal-image {
+  @apply max-w-full min-h-[50vh];
+}
+.btn-con {
+  @apply my-3 min-w-[50%] flex items-center justify-between;
+}
+.close-btn {
+  @apply mt-4 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300;
+}
+.delete-btn {
+  @apply mt-4 px-4 py-2 bg-red-200 rounded hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-gray-300;
+}
