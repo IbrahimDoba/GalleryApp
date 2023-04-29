@@ -9,6 +9,7 @@ const Homepage = () => {
   const [allImages, setAllImages] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleModal = (imageId) => {
     const clickedImage = allImages.find((img) => img._id === imageId);
@@ -54,7 +55,7 @@ const Homepage = () => {
             Accept: "application/json",
             "Access-Control-Allow-Origin": "*",
           },
-         
+
           transformRequest: [
             (data, headers) => {
               console.log("Request body size:", headers["Content-Length"]);
@@ -64,6 +65,7 @@ const Homepage = () => {
         }
       )
       .then((response) => {
+        fetchImages();
         console.log(response.data);
       })
       .catch((error) => {
@@ -75,12 +77,15 @@ const Homepage = () => {
       });
   }
 
+  const fetchImages = async () => {
+    setIsLoading(true)
+    const res = await axios.get("http://localhost:4000/upload");
+    setAllImages(res.data);
+    setIsLoading(false)
+    console.log("image here", allImages);
+  };
+
   useEffect(() => {
-    const fetchImages = async () => {
-      const res = await axios.get("http://localhost:4000/upload");
-      setAllImages(res.data);
-      console.log("image here", allImages);
-    };
     fetchImages();
     //eslint-disable-next-line
   }, []);
@@ -114,6 +119,7 @@ const Homepage = () => {
             submit
           </button>
           <p className="text-gray-500">file size not more than 50kb*</p>
+          {isLoading && <h1> Image Loading.... Please Wait....</h1> }
         </div>
       </form>
 
