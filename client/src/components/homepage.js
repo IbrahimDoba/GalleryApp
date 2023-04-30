@@ -19,7 +19,7 @@ const Homepage = () => {
   };
 
   const handleDelete = async (id) => {
-    const res = await axios.delete(`https://silvergallery.netlify.app/upload/${id}`);
+    const res = await axios.delete(`https://gallery-app-5iz4.onrender.com/upload/${id}`);
     const newImageList = allImages.filter((img) => img._id !== id);
     setAllImages(newImageList);
     setShowModal(false);
