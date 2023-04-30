@@ -19,7 +19,7 @@ const Homepage = () => {
   };
 
   const handleDelete = async (id) => {
-    const res = await axios.delete(`http://localhost:4000/upload/${id}`);
+    const res = await axios.delete(`https://gallery-app-5iz4.onrender.com/${id}`);
     const newImageList = allImages.filter((img) => img._id !== id);
     setAllImages(newImageList);
     setShowModal(false);
