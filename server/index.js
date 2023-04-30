@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 // app.use(express.urlencoded({ limit: "50mb" }));
 
 // use cors
-app.use(cors());
+app.use(cors({ origin: "https://silvergallery.netlify.app" }));
 
 // import Routes
 const ImageRoute = require("./routes/imageRoutes");
