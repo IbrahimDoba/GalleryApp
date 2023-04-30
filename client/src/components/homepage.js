@@ -46,14 +46,14 @@ const Homepage = () => {
     // formData.append("imgTitle", title);
     axios
       .post(
-        "http://localhost:4000/upload",
+        "https://gallery-app-5iz4.onrender.com/upload",
         // formData,
         { base64: images, imgTitle: title },
         {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://silvergallery.netlify.app",
           },
 
           transformRequest: [
@@ -79,9 +79,10 @@ const Homepage = () => {
 
   const fetchImages = async () => {
     setIsLoading(true)
-    const res = await axios.get("http://localhost:4000/upload");
+    const res = await axios.get("https://gallery-app-5iz4.onrender.com/upload");
     setAllImages(res.data);
     setIsLoading(false)
+    console.log("isloading",setIsLoading)
     console.log("image here", allImages);
   };
 
