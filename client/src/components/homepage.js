@@ -10,7 +10,7 @@ const Homepage = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [progressPercent, setProgressPercent] = useState(0);
+  // const [progressPercent, setProgressPercent] = useState(0);
 
   const handleModal = (imageId) => {
     const clickedImage = allImages.find((img) => img._id === imageId);
@@ -58,7 +58,7 @@ const Homepage = () => {
               (progressEvent.loaded * 100) / progressEvent.total
             );
             console.log(percentCompleted);
-            setProgressPercent(percentCompleted)
+            // setProgressPercent(percentCompleted)
             // You can update the UI here to show the percentage
           },
           
