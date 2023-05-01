@@ -3,16 +3,20 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
+const limit = 52428800
 const app = express();
 
 // use express.json to get data into json format
-app.use(express.json());
-const PORT = process.env.PORT || 4000;
-
 // increase limit of the req body to 10mb
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
+console.log("limit file size: " + limit)
+
+
+app.use(express.json());
+const PORT = process.env.PORT || 4000;
+
+
 
 // app.use(express.json({ limit: "50mb" }));
 // app.use(express.urlencoded({ limit: "50mb" }));

@@ -9,7 +9,7 @@
 }
 
 .modal-image {
-  @apply max-w-full mx-3 min-h-[50vh];
+  @apply max-w-[80%] mx-3 min-h-[70%] object-fill;
 }
 .btn-con {
   @apply my-3 min-w-[50%] flex items-center justify-between;
